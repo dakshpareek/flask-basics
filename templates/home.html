@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %} Homepage {% endblock %}
+
+
+{% block content %}
+{{ super() }}
+<h2>Welcome {{ name }} </h2>
+{% if logged == True %}
+<h3>You are logged in</h3>
+{% else %}
+<h3>You are NOT logged in</h3>
+{% endif %}
+
+<ul>
+    {% for x in mylist %}
+    <li>{{ x }}</li>
+    {% endfor %}
+</ul>
+
+
+
+<img height="50%" src="{{ url_for('static',filename = 'images/background.jpg')}}" >
+
+{% include 'include_this.html' %}
+{% endblock %}
